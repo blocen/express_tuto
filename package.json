@@ -1,0 +1,14 @@
+{
+  "name": "express_tuto",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "some_testing"
+  },
+  "repository": {
+    "type": "git",
+  },
+  "author": "",
+  "license": "ISC"
+}
