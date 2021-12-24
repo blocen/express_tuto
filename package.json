@@ -4,11 +4,23 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "some_testing"
+    "start": "nodemon --watch app.js"
   },
   "repository": {
-    "type": "git",
+    "type": "git"
   },
   "author": "",
-  "license": "ISC"
+  "type": "module",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^5.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.2",
+    "morgan": "^1.10.0",
+    "pg": "^8.7.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
 }
