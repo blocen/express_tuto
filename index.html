@@ -5,6 +5,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GITHUB page</title>
+
+  <script type="module" src="app.js"></script>
+  
   <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
   <style>
   body {
@@ -15,5 +18,20 @@
 <body>
   <h1>GITHUB page</h1>
 
-</body>
+  <h4>express API template</h4>
+
+  <p>npm i chalk cors dotenv express morgan</p>
+  <p>npm i -D nodemon</p>
+  <p>npm i ejs</p>
+
+  <footer>
+    <hr>
+    Copyright&copy; 2013-<span id="date"></span> Cosmo Enterprises. All rights reserved.
+  </footer>
+  
+  <script>
+    document.getElementById("date").innerHTML = new Date().getFullYear();
+  </script>
+    
+  </body>
 </html>
