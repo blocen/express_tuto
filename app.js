@@ -1,4 +1,5 @@
 import express from 'express';
+// const express = require("express");
 import { morganMiddleware } from "./middleware/morgan.js";
 
 const app = express();  
@@ -20,6 +21,7 @@ app.get("/home", (req, resp) =>  {
 
 // const userRouter = require('./routes/users');
 import router from './routes/users.cjs';
+import router2 from './routes/users.js';
 const userRouter = router;
 app.use('/users', userRouter);
 
@@ -30,3 +32,6 @@ app.use('/users', userRouter);
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
+
+// export default app;
+// module.exports = router;
