@@ -1,6 +1,6 @@
-const express = require('express');
-// import express from 'express'
-const router = express.Router();
+// const express = require('express');
+import express from 'express'
+export const router = express.Router();
 
 
 
@@ -13,4 +13,4 @@ router.get("/new", (req, resp) =>  {
 });
 
 // module.exports = router;
-export { router };
+export default router;
