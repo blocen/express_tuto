@@ -20,10 +20,10 @@ app.get("/home", (req, resp) =>  {
 });
 
 // const userRouter = require('./routes/users');
-import router from './routes/users.cjs';
-import router2 from './routes/users.js';
-const userRouter = router;
-app.use('/users', userRouter);
+// import router from './routes/users.cjs';
+import router from './routes/users.js';
+// const userRouter = router2;
+app.use('/users', router);
 
 // import router from './routes/some.cjs';
 // const someRouter = router;
@@ -32,6 +32,3 @@ app.use('/users', userRouter);
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
-
-// export default app;
-// module.exports = router;
