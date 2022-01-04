@@ -1,5 +1,4 @@
 import express from 'express';
-// const express = require("express");
 import { morganMiddleware } from "./middleware/morgan.js";
 
 const app = express();  
@@ -19,11 +18,8 @@ app.get("/home", (req, resp) =>  {
   resp.render("home", { text: "more data" });
 });
 
-// const userRouter = require('./routes/users');
-// import router from './routes/users.cjs';
-import router from './routes/users.js';
-// const userRouter = router2;
-app.use('/users', router);
+import userRouter from './routes/users.js';
+app.use('/users', userRouter);
 
 // import router from './routes/some.cjs';
 // const someRouter = router;
