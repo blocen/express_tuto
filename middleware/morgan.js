@@ -3,7 +3,7 @@ import chalk from "chalk";
 
 export const morganMiddleware = morgan(function (tokens, req, res) {
   return [
-    "\n\n\n",
+    // "\n\n\n",
     chalk.hex("#ff4757").bold("🍄  Morgan --> "),
     chalk.hex("#34ace0").bold(tokens.method(req, res)),
     chalk.hex("#ffb142").bold(tokens.status(req, res)),
@@ -13,6 +13,6 @@ export const morganMiddleware = morgan(function (tokens, req, res) {
     chalk.yellow(tokens["remote-addr"](req, res)),
     chalk.hex("#fffa65").bold("from " + tokens.referrer(req, res)),
     chalk.hex("#1e90ff")(tokens["user-agent"](req, res)),
-    "\n\n\n"
+    // "\n\n\n"
   ].join(" ");
 });

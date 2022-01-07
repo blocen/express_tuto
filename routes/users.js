@@ -27,6 +27,7 @@ router.get("/new", (req, resp) =>  {
 router
   .route("/:id")
   .get((req, resp) =>  {
+    console.log(req.user);
     resp.send(`user get with id: ${req.params.id}`)
   })
   .put((req, resp) =>  {
@@ -38,6 +39,13 @@ router
 
 router.post("/", (req, resp) =>  {
   resp.send("create user");
+});
+
+// middleware; runs between starting and ending of req
+const users = [{ name: "alice" }, { name: "bob"}];
+router.param("id", (req, resp, next, id) => {
+  req.user = users[id];
+  next();
 });
 
 export default router;
