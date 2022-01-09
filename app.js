@@ -5,8 +5,9 @@ const app = express();
 // middleware runs from top to bottom
 app.use(express.json());
 app.use(morganMiddleware);
-// app.use(logger);  
+app.use(logger);  
 app.use(express.static("public"));
+app.use(express.urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
 const port = 3000;
 

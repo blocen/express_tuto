@@ -2,11 +2,13 @@ import express from 'express'
 export const router = express.Router();
 
 router.get("/", (req, resp) =>  {
+  console.log(req.query.name);
   resp.send("user list");
 });
 
 router.get("/new", (req, resp) =>  {
-  resp.send("user new form");
+  // resp.send("user new form");
+  resp.render("users/new", { firstName: "your first name"});
 });
 
 // router.get("/:id", (req, resp) =>  {
@@ -38,7 +40,15 @@ router
   });
 
 router.post("/", (req, resp) =>  {
-  resp.send("create user");
+  // resp.send("create user");
+  const isValid = true;
+  if (isValid) {
+    users.push({ firstName: req.body.firstName })
+    resp.redirect(`/users/${users.length - 1}`)
+  } else {
+    console.log("Error in post new user");
+    resp.render("users/new", { firstName: req.body.firstName })
+  }
 });
 
 // middleware; runs between starting and ending of req
