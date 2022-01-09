@@ -13,6 +13,6 @@ export const morganMiddleware = morgan(function (tokens, req, res) {
     chalk.yellow(tokens["remote-addr"](req, res)),
     chalk.hex("#fffa65").bold("from " + tokens.referrer(req, res)),
     chalk.hex("#1e90ff")(tokens["user-agent"](req, res)),
-    // "\n\n\n"
+    "\n\n\n"
   ].join(" ");
 });
