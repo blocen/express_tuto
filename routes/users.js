@@ -2,7 +2,7 @@ import express from 'express'
 export const router = express.Router();
 
 router.get("/", (req, resp) =>  {
-  console.log(req.query.name);
+  console.log("query name: ", req.query.name);
   resp.send("user list");
 });
 

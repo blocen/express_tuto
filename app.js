@@ -12,7 +12,7 @@ app.set('view engine', 'ejs');
 const port = 3000;
 
 // logger; and more middleware to be used on indivudual endpoints
-app.get("/", logger, (req, resp) =>  {
+app.get("/", auth, logger, (req, resp) =>  {
   // resp.send("hello world...");
   // resp.status(200).send("hello world...");
   resp.status(200).json({message: "some message"});
@@ -34,6 +34,18 @@ app.use('/users', userRouter);
 function logger(req, resp, next) {
   console.log("originalUrl: ", req.originalUrl);
   next();
+}
+
+// access req object
+function auth(req, resp, next) {
+  console.log("auth middleware ");
+  if (req.query.admin === 'true') {
+    // pass variables to other sections of controller actions/middleware
+    req.admin = true;
+    next()
+  } else {
+    resp.send("no auth")
+  }
 }
 
 app.listen(port, () => {
